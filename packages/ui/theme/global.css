@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@import './animation.css';
+@import './blur.css';
+@import './breakpoints.css';
+@import './color.css';
+@import './container.css';
+@import './formInputs.css';
+@import './gradient.css';
+@import './mask.css';
+@import './shadow.css';
+@import './spacing.css';
+@import './tokens.css';
+@import './typography.css';
+@import './utilities.css';
+
+/* Disable this if you want to leverage `prefers-color-scheme` */
+@custom-variant dark (&: where(.dark, .dark *));
+@custom-variant has-value (&:not(:placeholder-shown));
+@custom-variant child-has-value (& input:not(:placeholder-shown));
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+
+  body {
+    @apply font-base;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply scroll-m-24;
+  }
+}

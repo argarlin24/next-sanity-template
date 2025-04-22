@@ -1,0 +1,17 @@
+{
+  "name": "@packages/typescript",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./tsconfig": "./tsconfig.json",
+    "./base": "./base.json",
+    "./web": "./web.json",
+    "./studio": "./studio.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@packages/utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "main": "src/index.ts",
+  "files": [
+    "src/**/*.ts"
+  ],
+  "devDependencies": {
+    "@packages/eslint": "*",
+    "@packages/typescript": "*"
+  },
+  "scripts": {
+    "lint": "eslint . --fix",
+    "format": "prettier --write --log-level silent \"src/**/*.{js,jsx,ts,tsx}\"",
+    "type-check": "tsc --noEmit"
+  }
+}

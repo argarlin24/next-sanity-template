@@ -1,0 +1,37 @@
+@theme {
+  --shadowXs: ;
+  --shadowSm: ;
+  --shadowMd: ;
+  --shadowLg: ;
+  --shadowXl: ;
+  --shadow2xl: ;
+  --shadow3xl: ;
+
+  --drop-shadowSm: ;
+  --drop-shadowMd: ;
+  --drop-shadowLg: ;
+  --drop-shadowXl: ;
+  --drop-shadow2xl: ;
+  --drop-shadow3xl: ;
+
+  --shadow-none: unset;
+  --shadow-sm: var(--shadowXs);
+  --shadow-md: var(--shadowMd);
+  --shadow-lg: var(--shadowLg);
+  --shadow-xl: var(--shadowXl);
+  --shadow-2xl: var(--shadow2xl);
+  --shadow-3xl: var(--shadow3xl);
+
+  --drop-shadow-none: unset;
+  --drop-shadow-sm: var(--drop-shadowSm);
+  --drop-shadow-md: var(--drop-shadowMd);
+  --drop-shadow-lg: var(--drop-shadowLg);
+  --drop-shadow-xl: var(--drop-shadowXl);
+  --drop-shadow-2xl: var(--drop-shadow2xl);
+  --drop-shadow-3xl: var(--drop-shadow3xl);
+}
+
+@utility drop-shadow-* {
+  --tw-drop-shadow: --value(--drop-shadow- *);
+  filter: var(--tw-drop-shadow);
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build", "setup-sprites"],
+      "inputs": ["$TURBO_DEFAULT$", ".env"]
+    },
+    "dev": {
+      "dependsOn": ["setup-sprites"],
+      "cache": false,
+      "persistent": true,
+      "inputs": ["$TURBO_DEFAULT$", ".env"]
+    },
+    "lint": {},
+    "format": {},
+    "type-check": {},
+    "typegen": {},
+
+    "validate": {
+      "dependsOn": ["lint", "format", "type-check"]
+    },
+    "studio#build": {
+      "outputs": ["dist/**"]
+    },
+    "web#build": {
+      "outputs": [".next/**"]
+    },
+    "setup-sprites": {
+      "cache": false,
+      "inputs": ["packages/ui-assets/icons/sprites.svg"],
+      "outputs": ["apps/*/public/icons/sprites.svg", "apps/*/static/icons/sprites.svg"]
+    }
+  },
+  "globalDependencies": [".env"],
+  "globalEnv": ["API_VERSION", "DATASET_PROD", "PROJECT_ID", "READ_TOKEN"]
+}

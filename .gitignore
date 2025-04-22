@@ -1,0 +1,38 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.yarn/install-state.gz
+.yarn
+.pnp
+.pnp.js
+
+# local envs
+.turbo
+.env
+!.env.example
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+build
+
+# misc
+.eslintcache
+.DS_Store
+.react-templates
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# copied sprite files
+apps/web/public/icons/sprites.svg
+apps/studio/static/icons/sprites.svg
+

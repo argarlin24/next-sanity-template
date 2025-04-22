@@ -1,0 +1,3 @@
+@theme {
+  --gradient-primary: linear-gradient(90deg, var(--colors-black), var(--colors-white));
+}

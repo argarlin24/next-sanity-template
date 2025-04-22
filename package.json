@@ -1,0 +1,102 @@
+{
+  "name": "sanity-template",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Webstacks",
+    "url": "https://www.webstacks.com/"
+  },
+  "scripts": {
+    "build": "dotenv -- turbo run build",
+    "dev": "dotenv -- turbo run dev",
+    "dev:cms": "dotenv -- turbo run dev --filter=studio",
+    "dev:web": "dotenv -- turbo run dev --filter=web",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "typegen": "dotenv -- turbo run typegen",
+    "validate": "turbo run validate",
+    "check-types": "turbo run type-check",
+    "setup-sprites": "turbo run setup-sprites",
+    "preinstall": "./.scripts/setup-sprites.sh apps/web/public/icons && ./.scripts/setup-sprites.sh apps/studio/static/icons",
+    "prepare": "husky"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/compat": "^1.2.8",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@typescript-eslint/eslint-plugin": "^8.30.1",
+    "@typescript-eslint/parser": "^8.30.1",
+    "class-variance-authority": "^0.7.1",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
+    "eslint-plugin-no-relative-import-paths": "^1.6.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "turbo run validate"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/git",
+      "@semantic-release/changelog"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": "20.19.x"
+  },
+  "packageManager": "yarn@4.5.0"
+}

@@ -1,0 +1,67 @@
+/*
+* ALL FONT SIZES ARE IN REM VALUES
+* Preference would be to use unitless or % values for line-height
+*/
+
+@theme {
+  --text-*: initial;
+
+  /* FONT FAMILIES */
+  --font-inter: var(--font-inter-dec), ui-sans-serif, system-ui, sans-serif;
+  --font-base: var(--font-inter);
+
+  /* FONT SIZES */
+  /* Display */
+  --text-display-xs: 1.5rem;
+  --text-display-xs--line-height: 1.33;
+  --text-display-sm: 1.875rem;
+  --text-display-sm--line-height: 1.26;
+  --text-display-md: 2.25rem;
+  --text-display-md--line-height: 1.11;
+  --text-display-md--letter-spacing: -0.045rem;
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1;
+  --text-display-lg--letter-spacing: -0.06rem;
+  --text-display-xl: 3.75rem;
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: -0.075rem;
+  --text-display-2xl: 4.5rem;
+  --text-display-2xl--line-height: 1;
+  --text-display-2xl--letter-spacing: -0.09rem;
+
+  /* Body */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.42;
+  --text-md: 1rem;
+  --text-md--line-height: 1.5;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.55;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+
+  /* Rich Text */
+  --text-rich-h1: 3.125rem;
+  --text-rich-h1--line-height: 1.2;
+  --text-rich-h1--letter-spacing: -0.0625rem;
+  --text-rich-h2: 2.0625rem;
+  --text-rich-h2--line-height: 1.15;
+  --text-rich-h3: 1.6875rem;
+  --text-rich-h3--line-height: 1.4;
+  --text-rich-h4: 1.5rem;
+  --text-rich-h4--line-height: 1.33;
+  --text-rich-h5: 1.25rem;
+  --text-rich-h5--line-height: 1.5;
+  --text-rich-h6: 1rem;
+  --text-rich-h6--line-height: 1.5;
+  --text-rich-body: 1.125;
+  --text-rich-body--line-height: 1.555;
+
+  /* FONT WEIGHTS */
+  --font-weight-regular: 400;
+}
+
+@utility text-overline {
+  @apply text-md uppercase;
+}

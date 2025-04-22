@@ -1,0 +1,19 @@
+@utility text-copy {
+  @apply text-black dark:text-white;
+}
+
+@utility text-headline {
+  @apply text-black dark:text-white;
+}
+
+@utility text-subtitle-light {
+  color: var(--text-subtitle-override, var(--color-black));
+}
+
+@utility text-subtitle {
+  @apply text-subtitle-light dark:text-white/60;
+}
+
+@utility border-stroke-1 {
+  @apply border border-black dark:border-white;
+}

@@ -1,0 +1,5 @@
+@import '@packages/ui/theme/global.css';
+
+html[data-announcement-dismissed='true'] #announcement-bar {
+  @apply hidden;
+}
