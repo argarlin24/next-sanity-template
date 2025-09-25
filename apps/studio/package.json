@@ -25,7 +25,7 @@
     "@packages/ui": "*",
     "@packages/utils": "*",
     "@sanity/assist": "^4.0.1",
-    "@sanity/client": "^6.29.0",
+    "@sanity/client": "^7.11.2",
     "@sanity/color": "^3.0.6",
     "@sanity/document-internationalization": "^3.3.1",
     "@sanity/embeddings-index-ui": "^2.0.1",
