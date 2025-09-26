@@ -12,8 +12,7 @@ export type RichImageFragment = InferFragmentType<typeof richImageFragment>;
 
 const RichImage = ({ value }: PortableTextTypeComponentProps<RichImageFragment>) => (
   <figure className="flex flex-col gap-4">
-    {value && <Image {...(value as ImageProps)} className="w-full overflow-hidden rounded-sm" />}
-    {value.caption && <figcaption className="">{value.caption}</figcaption>}
+    {value && <Image {...(value as unknown as ImageProps)} className="w-full overflow-hidden rounded-sm" />}
   </figure>
 );
 
@@ -21,7 +20,11 @@ type RichImageQuery = ExtractSanityType<Blog, 'richImage', undefined, 'content'>
 export const richImageFragment = q.fragment<RichImageQuery>().project({
   _type: q.literal('richImage'),
   _key: q.string(),
-  ...imageFragment,
+  asset: imageFragment.asset,
+  alt: imageFragment.alt,
+  responsive: imageFragment.responsive,
+  mobile: imageFragment.mobile,
+  tablet: imageFragment.tablet,
 });
 
 export default RichImage;

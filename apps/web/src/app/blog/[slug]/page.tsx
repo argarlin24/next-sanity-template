@@ -2,19 +2,19 @@ import { z } from 'groqd';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 
-import { hasArrayValues } from '@packages/utils/src/arrays';
+// import { hasArrayValues } from '@packages/utils/src/arrays';
 
-import { imageFragment } from 'molecules/image';
+// import { imageFragment } from 'molecules/image';
 import Section from 'molecules/section';
 
-import { blogCategoryFragment } from 'organisms/cards/resource';
+// import { blogCategoryFragment } from 'organisms/cards/resource';
 import RichText, { articleFragment, richTextFragment } from 'organisms/richText';
 
-import LeftAlignedHero from 'components/hero/variations/leftAligned';
+// import LeftAlignedHero from 'components/hero/variations/leftAligned';
 
 import { q, runQuery } from 'lib/client';
 
-import ComponentGenerator, { componentGeneratorWithSymbolsFragment } from 'utils/componentGenerator';
+// import ComponentGenerator, { componentGeneratorWithSymbolsFragment } from 'utils/componentGenerator';
 import constructMetadata, { seoFragment } from 'utils/constructMetadata';
 
 import type { Metadata } from 'next';
@@ -27,10 +27,10 @@ const pageQuery = q
       postTitle: blog.field('postTitle[]').project(richTextFragment),
       publishedDate: q.string().optional().nullable(),
       excerpt: blog.field('excerpt[]').project(richTextFragment),
-      featuredImage: blog.field('featuredImage').project(imageFragment),
+      // featuredImage: blog.field('featuredImage').project(imageFragment),
       content: blog.field('content[]').project(articleFragment),
-      blogTags: blog.field('blogTags[]').deref().project(blogCategoryFragment),
-      body: blog.field('body[]').project(componentGeneratorWithSymbolsFragment),
+      // blogTags: blog.field('blogTags[]').deref().project(blogCategoryFragment),
+      // body: blog.field('body[]').project(componentGeneratorWithSymbolsFragment),
     })),
   pagesQuery = q.star.filterByType('blog').project(page => ({
     slug: page.field('seo').field('slug.current', z.string().nullable()),
@@ -54,13 +54,14 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <>
       <Section padding={{ top: 'lg', bottom: 'lg' }}>
-        <LeftAlignedHero
+        <div>Blog Hero</div>
+        {/* <LeftAlignedHero
           heading={{
             heading: data.postTitle,
             body: data.excerpt,
           }}
           featuredImage={data.featuredImage}
-        />
+        /> */}
       </Section>
       <Section>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
@@ -70,7 +71,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </div>
         </div>
       </Section>
-      {hasArrayValues(data.body) && <ComponentGenerator sections={data.body} />}
+      {/* {hasArrayValues(data.body) && <ComponentGenerator sections={data.body} />} */}
     </>
   );
 };

@@ -28,7 +28,6 @@ const hero = definePageComponent({
     defineImage({
       name: 'featuredImage',
       title: 'Featured Image',
-      responsive: true,
     }),
     defineField({
       name: 'disableBreadcrumbs',

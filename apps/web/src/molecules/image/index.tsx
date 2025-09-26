@@ -86,7 +86,7 @@ const Image: FC<ImageProps> = ({
   );
 };
 
-export type ImageQuery = StripMaybe<ExtractSanityType<Page, 'hero', 'featuredImage'>> & { caption?: string | null };
+export type ImageQuery = StripMaybe<ExtractSanityType<Page, 'hero', 'featuredImage'>>
 export const imageNoMetaFragment = q.fragment<ImageQuery>().project(image => ({
   asset: image
     .field('asset')
@@ -121,7 +121,6 @@ export const imageNoMetaFragment = q.fragment<ImageQuery>().project(image => ({
 export const imageFragment = q.fragment<ImageQuery>().project(image => ({
   ...imageNoMetaFragment,
   alt: z.string().optional().nullable(),
-  caption: z.string().optional().nullable(),
   responsive: z.boolean().optional().nullable(),
   mobile: image.field('mobile').project(imageNoMetaFragment).nullable(true),
   tablet: image.field('tablet').project(imageNoMetaFragment).nullable(true),
