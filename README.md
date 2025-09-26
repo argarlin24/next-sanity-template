@@ -1,15 +1,17 @@
 # Sanity Template
 
 Welcome to the Sanity template! This starter kit combines Sanity CMS with a modern monorepo structure, making it easier
-for our team to build and maintain client projects.
+for our team to build and maintain client projects
 
 ## Documentation
 
 ### Applications
+
 - [Web Application](apps/web/README.md) - Next.js frontend application
 - [Sanity Studio](apps/studio/README.md) - Sanity CMS studio
 
 ### Packages
+
 - [Assets](packages/assets/README.md) - Shared assets and resources
 - [ESLint Config](packages/eslint/README.md) - Shared ESLint configuration
 - [TypeScript Config](packages/typescript/README.md) - Shared TypeScript configuration
