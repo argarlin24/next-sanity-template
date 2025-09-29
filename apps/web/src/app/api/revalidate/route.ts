@@ -1,8 +1,9 @@
-import { NextRequest } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { parseBody } from 'next-sanity/webhook';
 
-export async function POST(req: NextRequest) {
+import type { NextRequest } from 'next/server';
+
+export const POST = async (req: NextRequest) => {
   try {
     const { body, isValidSignature } = await parseBody<{ slug: string }>(req, process.env.SANITY_REVALIDATE_SECRET);
 
@@ -22,4 +23,4 @@ export async function POST(req: NextRequest) {
 
     return new Response('Failed to revalidate', { status: 500 });
   }
-}
+};
