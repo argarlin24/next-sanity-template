@@ -67,7 +67,6 @@ export const generateMetadata = async ({ params }: { params: Promise<{ slug: str
   return constructMetadata(data.seo, slug);
 };
 
-export const revalidate = 60;
 export const dynamicParams = true;
 
 export default Page;
